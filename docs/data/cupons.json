@@ -1,9 +1,5 @@
 {
-<<<<<<< Updated upstream
- "geradoEm": "2026-06-11T23:05:02.554Z",
-=======
- "geradoEm": "2026-06-11T23:10:25.042Z",
->>>>>>> Stashed changes
+ "geradoEm": "2026-06-11T23:20:45.553Z",
  "lojas": [
   {
    "loja": "Mercado Livre",
@@ -61,11 +57,7 @@
     }
    ],
    "ok": true,
-<<<<<<< Updated upstream
-   "em": "2026-06-11T23:05:02.554Z"
-=======
-   "em": "2026-06-11T23:10:25.042Z"
->>>>>>> Stashed changes
+   "em": "2026-06-11T23:20:45.553Z"
   },
   {
    "loja": "Amazon",
@@ -123,11 +115,7 @@
     }
    ],
    "ok": true,
-<<<<<<< Updated upstream
-   "em": "2026-06-11T23:05:02.554Z"
-=======
-   "em": "2026-06-11T23:10:25.042Z"
->>>>>>> Stashed changes
+   "em": "2026-06-11T23:20:45.553Z"
   },
   {
    "loja": "Casas Bahia",
@@ -185,11 +173,7 @@
     }
    ],
    "ok": true,
-<<<<<<< Updated upstream
-   "em": "2026-06-11T23:05:02.554Z"
-=======
-   "em": "2026-06-11T23:10:25.042Z"
->>>>>>> Stashed changes
+   "em": "2026-06-11T23:20:45.553Z"
   },
   {
    "loja": "Magalu",
@@ -247,11 +231,7 @@
     }
    ],
    "ok": true,
-<<<<<<< Updated upstream
-   "em": "2026-06-11T23:05:02.554Z"
-=======
-   "em": "2026-06-11T23:10:25.042Z"
->>>>>>> Stashed changes
+   "em": "2026-06-11T23:20:45.553Z"
   },
   {
    "loja": "KaBuM",
@@ -309,11 +289,7 @@
     }
    ],
    "ok": true,
-<<<<<<< Updated upstream
-   "em": "2026-06-11T23:05:02.554Z"
-=======
-   "em": "2026-06-11T23:10:25.042Z"
->>>>>>> Stashed changes
+   "em": "2026-06-11T23:20:45.553Z"
   }
  ]
 }
