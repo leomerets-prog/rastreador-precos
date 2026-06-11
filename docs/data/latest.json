@@ -1,5 +1,5 @@
 {
- "geradoEm": "2026-06-11T22:46:47.743Z",
+ "geradoEm": "2026-06-11T22:59:47.353Z",
  "produtos": {
   "tablet-lenovo-ideatab": {
    "config": {
@@ -16,7 +16,7 @@
      "titulo": "Tablet Lenovo Idea Tab Octa-Core, 4GB, 128GB Android 15 Wifi 5, Tela 11” 90Hz, Caneta e Capa",
      "preco": 1799,
      "url": "https://www.amazon.com.br/dp/B0FN4BK3V7",
-     "coletadoEm": "2026-06-11T22:46:47.743Z"
+     "coletadoEm": "2026-06-11T22:59:47.353Z"
     },
     {
      "fonte": "mercadolivre",
@@ -24,7 +24,7 @@
      "titulo": "Tablet Lenovo Ideatab 4gb 128gb Wifi Com Caneta E Case Azul",
      "preco": 1709,
      "url": "https://www.mercadolivre.com.br/tablet-lenovo-ideatab-4gb-128gb-wifi-com-caneta-e-case-azul/p/MLB65036490",
-     "coletadoEm": "2026-06-11T22:46:47.743Z"
+     "coletadoEm": "2026-06-11T22:59:47.353Z"
     },
     {
      "fonte": "mercadolivre",
@@ -32,7 +32,7 @@
      "titulo": "Tablet Lenovo Idea Tab, 8GB RAM, 128GB, 11” 2.5K 90Hz, Android 15, Wi-Fi, com Caneta e Capa, ZAFR0856BR",
      "preco": 1869,
      "url": "https://www.mercadolivre.com.br/tablet-lenovo-idea-tab-8gb-ram-128gb-11-25k-90hz-android-15-wi-fi-com-caneta-e-capa-zafr0856br/p/MLB56554577",
-     "coletadoEm": "2026-06-11T22:46:47.743Z"
+     "coletadoEm": "2026-06-11T22:59:47.353Z"
     },
     {
      "fonte": "mercadolivre",
@@ -40,7 +40,7 @@
      "titulo": "Tablet Lenovo Idea Tab Edição Limitada de Copa do Mundo, 8GB RAM, 128GB, 11” 2.5K 90Hz, Android 15, Wi-Fi, com Caneta e Capa Oficial FIFA, ZAFR0976BR",
      "preco": 1899,
      "url": "https://www.mercadolivre.com.br/tablet-lenovo-idea-tab-edico-limitada-de-copa-do-mundo-8gb-ram-128gb-11-25k-90hz-android-15-wi-fi-com-caneta-e-capa-oficial-fifa-zafr0976br/p/MLB65038137",
-     "coletadoEm": "2026-06-11T22:46:47.743Z"
+     "coletadoEm": "2026-06-11T22:59:47.353Z"
     },
     {
      "fonte": "mercadolivre",
@@ -48,7 +48,7 @@
      "titulo": "Tablet Lenovo Idea Tab 128gb Caneta Case + E-books Digitais",
      "preco": 1899,
      "url": "https://www.mercadolivre.com.br/tablet-lenovo-idea-tab-128gb-caneta-case--ebooks-digitais/up/MLBU3747994760",
-     "coletadoEm": "2026-06-11T22:46:47.743Z"
+     "coletadoEm": "2026-06-11T22:59:47.353Z"
     },
     {
      "fonte": "mercadolivre",
@@ -56,7 +56,7 @@
      "titulo": "Tablet Lenovo Idea Tb336fu 11 128gb 8gb Pç De Mostruário",
      "preco": 1899,
      "url": "https://www.mercadolivre.com.br/tablet-lenovo-idea-tb336fu-11-128gb-8gb-pc-de-mostruario/up/MLBU3938889337",
-     "coletadoEm": "2026-06-11T22:46:47.743Z"
+     "coletadoEm": "2026-06-11T22:59:47.353Z"
     },
     {
      "fonte": "zoom",
@@ -64,7 +64,7 @@
      "preco": 1819,
      "loja": "Ponto",
      "url": "https://www.zoom.com.br/tablet-ipad/tablet-lenovo-128gb-idea-tab-11-8-mp",
-     "coletadoEm": "2026-06-11T22:46:47.743Z"
+     "coletadoEm": "2026-06-11T22:59:47.353Z"
     },
     {
      "fonte": "zoom",
@@ -72,7 +72,7 @@
      "preco": 2149,
      "loja": "Amazon",
      "url": "https://www.zoom.com.br/lead?oid=1529153171",
-     "coletadoEm": "2026-06-11T22:46:47.743Z"
+     "coletadoEm": "2026-06-11T22:59:47.353Z"
     },
     {
      "fonte": "zoom",
@@ -80,7 +80,7 @@
      "preco": 2172.56,
      "loja": "Extra",
      "url": "https://www.zoom.com.br/lead?oid=1561712638",
-     "coletadoEm": "2026-06-11T22:46:47.743Z"
+     "coletadoEm": "2026-06-11T22:59:47.353Z"
     },
     {
      "fonte": "zoom",
@@ -88,40 +88,40 @@
      "preco": 2172.56,
      "loja": "Ponto",
      "url": "https://www.zoom.com.br/lead?oid=1561712381",
-     "coletadoEm": "2026-06-11T22:46:47.743Z"
+     "coletadoEm": "2026-06-11T22:59:47.353Z"
     }
    ],
    "promocoes": [],
    "fontes": {
     "amazon": {
      "ok": true,
-     "em": "2026-06-11T22:46:47.743Z",
-     "ultimoOkEm": "2026-06-11T22:46:47.743Z"
+     "em": "2026-06-11T22:59:47.353Z",
+     "ultimoOkEm": "2026-06-11T22:59:47.353Z"
     },
     "mercadolivre": {
      "ok": true,
-     "em": "2026-06-11T22:46:47.743Z",
-     "ultimoOkEm": "2026-06-11T22:46:47.743Z"
+     "em": "2026-06-11T22:59:47.353Z",
+     "ultimoOkEm": "2026-06-11T22:59:47.353Z"
     },
     "zoom": {
      "ok": true,
-     "em": "2026-06-11T22:46:47.743Z",
-     "ultimoOkEm": "2026-06-11T22:46:47.743Z"
+     "em": "2026-06-11T22:59:47.353Z",
+     "ultimoOkEm": "2026-06-11T22:59:47.353Z"
     },
     "buscape": {
      "ok": true,
-     "em": "2026-06-11T22:46:47.743Z",
-     "ultimoOkEm": "2026-06-11T22:46:47.743Z"
+     "em": "2026-06-11T22:59:47.353Z",
+     "ultimoOkEm": "2026-06-11T22:59:47.353Z"
     },
     "pelando": {
      "ok": true,
-     "em": "2026-06-11T22:46:47.743Z",
-     "ultimoOkEm": "2026-06-11T22:46:47.743Z"
+     "em": "2026-06-11T22:59:47.353Z",
+     "ultimoOkEm": "2026-06-11T22:59:47.353Z"
     },
     "promobit": {
      "ok": true,
-     "em": "2026-06-11T22:46:47.743Z",
-     "ultimoOkEm": "2026-06-11T22:46:47.743Z"
+     "em": "2026-06-11T22:59:47.353Z",
+     "ultimoOkEm": "2026-06-11T22:59:47.353Z"
     }
    },
    "melhorOferta": {
@@ -130,7 +130,7 @@
     "titulo": "Tablet Lenovo Ideatab 4gb 128gb Wifi Com Caneta E Case Azul",
     "preco": 1709,
     "url": "https://www.mercadolivre.com.br/tablet-lenovo-ideatab-4gb-128gb-wifi-com-caneta-e-case-azul/p/MLB65036490",
-    "coletadoEm": "2026-06-11T22:46:47.743Z"
+    "coletadoEm": "2026-06-11T22:59:47.353Z"
    }
   }
  }

@@ -82,12 +82,15 @@ export function precoNaFaixa(preco, produto) {
 
 export function decodificarEntidades(s) {
   return (s ?? "")
-    .replace(/&amp;/g, "&")
+    // entidades numéricas (&#225; -> á, &#x27; -> ') — comum em descrições de cupom
+    .replace(/&#x([0-9a-f]+);/gi, (_, h) => String.fromCodePoint(parseInt(h, 16)))
+    .replace(/&#(\d+);/g, (_, d) => String.fromCodePoint(parseInt(d, 10)))
+    .replace(/&quot;/g, '"')
+    .replace(/&apos;/g, "'")
     .replace(/&lt;/g, "<")
     .replace(/&gt;/g, ">")
-    .replace(/&quot;/g, '"')
-    .replace(/&#0?39;/g, "'")
-    .replace(/&#x27;/gi, "'")
+    .replace(/&nbsp;/g, " ")
+    .replace(/&amp;/g, "&") // por último: não recriar entidades decodificadas acima
     .replace(/\s+/g, " ")
     .trim();
 }

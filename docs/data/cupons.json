@@ -1,0 +1,290 @@
+{
+ "geradoEm": "2026-06-11T22:59:47.353Z",
+ "lojas": [
+  {
+   "loja": "Mercado Livre",
+   "slug": "mercado-livre",
+   "url": "https://www.cuponomia.com.br/desconto/mercado-livre",
+   "cupons": [
+    {
+     "codigo": "COMPRANOMELI",
+     "descricao": "18% OFF em compras a partir de R$79, limitado a R$60.",
+     "titulo": "Mercado Livre garante 18% OFF com cupom",
+     "verificadoHoje": true
+    },
+    {
+     "codigo": "APROVEITA",
+     "descricao": "18% OFF em compras a partir de R$79, limitado a R$60.",
+     "titulo": "18% OFF em suas compras com cupom Mercado Livre",
+     "verificadoHoje": true
+    },
+    {
+     "codigo": "INTERNACIONAL15OFF",
+     "descricao": "15% OFF em compras de produtos internacionais selecionados a partir de R$50, com desconto máximo limitado a R$25.",
+     "titulo": "Ganhe 15% OFF com cupom Mercado Livre",
+     "verificadoHoje": true
+    },
+    {
+     "codigo": "ESPORTES10",
+     "descricao": "10% OFF para compras mínimas de R$55, com desconto máximo de R$150.",
+     "titulo": "10% OFF em produtos esportivos com cupom Mercado Livre",
+     "verificadoHoje": true
+    },
+    {
+     "codigo": "OFERTA18",
+     "descricao": "18% OFF para compras mínimas de R$99 e desconto máximo de R$25.",
+     "titulo": "Faça compras com código promocional Mercado Livre e obtenha 18% de economia",
+     "verificadoHoje": true
+    },
+    {
+     "codigo": "MODA15",
+     "descricao": "15% OFF para compras mínimas de R$249 e desconto máximo de R$65.",
+     "titulo": "Confira desconto imperdível de 15% com voucher Mercado Livre",
+     "verificadoHoje": true
+    },
+    {
+     "codigo": "QUEROPROMO",
+     "descricao": "Desconto de R$300 em Edge 70 Fusion FIFA Edition.",
+     "titulo": "R$300 OFF em Edge 70 Fusion FIFA Edition com cupom Mercado Livre",
+     "verificadoHoje": false
+    },
+    {
+     "codigo": "BEAUTY15",
+     "descricao": "15% OFF para compras mínimas de R$99,90, e desconto máximo de R$100.",
+     "titulo": "Hora do desconto: 15% OFF com cupom Mercado Livre",
+     "verificadoHoje": false
+    }
+   ],
+   "ok": true,
+   "em": "2026-06-11T22:59:47.353Z"
+  },
+  {
+   "loja": "Amazon",
+   "slug": "amazon",
+   "url": "https://www.cuponomia.com.br/desconto/amazon",
+   "cupons": [
+    {
+     "codigo": "ATACANTES",
+     "descricao": "Desconto de 10% em compras a partir de R$100, com desconto máximo limitado a R$50.",
+     "titulo": "Super promo Amazon: 10% OFF com cupom",
+     "verificadoHoje": true
+    },
+    {
+     "codigo": "MEIOCAMPO",
+     "descricao": "10% OFF em compras a partir de R$600, com desconto máximo limitado a R$150.",
+     "titulo": "Cupom Amazon garante 10% OFF",
+     "verificadoHoje": true
+    },
+    {
+     "codigo": "GOLEIROS",
+     "descricao": "Desconto de 10% em compras a partir de R$100, com desconto máximo limitado a R$50.",
+     "titulo": "Ganhe 10% OFF em compras com cupom Amazon",
+     "verificadoHoje": true
+    },
+    {
+     "codigo": "ULTIMO6DO6",
+     "descricao": "Ganhe R$150 OFF em compras acima de R$1.499.",
+     "titulo": "Aproveite cupom Amazon com R$150 de desconto",
+     "verificadoHoje": false
+    },
+    {
+     "codigo": "JOGADORES",
+     "descricao": "Válido para pedidos acima de R$200, com desconto máximo limitado a R$200.",
+     "titulo": "Amazon concede 10% OFF em suas compras com cupom",
+     "verificadoHoje": false
+    },
+    {
+     "codigo": "GOLDEPLACA",
+     "descricao": "Para compras acima de R$300, com desconto máximo limitado a R$100.",
+     "titulo": "10% OFF aplicando cupom Amazon",
+     "verificadoHoje": false
+    },
+    {
+     "codigo": "CANARINHO",
+     "descricao": "10% OFF para compras a partir de R$200, com desconto máximo limitado a R$50.",
+     "titulo": "Ganhe 10% OFF em seus pedidos com cupom Amazon",
+     "verificadoHoje": false
+    },
+    {
+     "codigo": "ATACANTE",
+     "descricao": "Válido para produtos elegíveis em compras acima de R$200, com desconto máximo limitado a R$100.",
+     "titulo": "Use cupom Amazon e ganhe 10% OFF em suas compras",
+     "verificadoHoje": false
+    }
+   ],
+   "ok": true,
+   "em": "2026-06-11T22:59:47.353Z"
+  },
+  {
+   "loja": "Casas Bahia",
+   "slug": "casas-bahia",
+   "url": "https://www.cuponomia.com.br/desconto/casas-bahia",
+   "cupons": [
+    {
+     "codigo": "VAIBRASIL",
+     "descricao": "Clique no link para conferir as melhores ofertas do site.",
+     "titulo": "Até R$1.000 OFF com cupom Casas Bahia",
+     "verificadoHoje": true
+    },
+    {
+     "codigo": "BLACKOUT",
+     "descricao": "Confira a seleção de produtos no link.",
+     "titulo": "Cupom Casas Bahia com até 40% OFF",
+     "verificadoHoje": true
+    },
+    {
+     "codigo": "TORCIDA",
+     "descricao": "Desconto de até 10% válido para itens do link.",
+     "titulo": "Aplique cupom Casas Bahia e garanta até 10% OFF em compras",
+     "verificadoHoje": false
+    },
+    {
+     "codigo": "OFERTACDC",
+     "descricao": "Desconto válido para itens do link. Consulte o regulamento da promoção no site.",
+     "titulo": "Compre com cupom Casas Bahia e garanta desconto de até 50%",
+     "verificadoHoje": false
+    },
+    {
+     "codigo": "EXCLUSIVO",
+     "descricao": "Desconto válido para os itens do link.",
+     "titulo": "Aproveite até 10% OFF em suas compras utilizando cupom Casas Bahia",
+     "verificadoHoje": false
+    },
+    {
+     "codigo": "6DO6",
+     "descricao": "Aproveite seleção de produtos com até 40% OFF.",
+     "titulo": "Até 40% OFF com cupom Casas Bahia",
+     "verificadoHoje": false
+    },
+    {
+     "codigo": "INVASAO",
+     "descricao": "Desconto de até 30% válido para itens do link.",
+     "titulo": "Casas Bahia garante desconto de até 30% com cupom",
+     "verificadoHoje": false
+    },
+    {
+     "codigo": "QUARTO15",
+     "descricao": "Confira os itens selecionados no site.",
+     "titulo": "Outlet de móveis Casas Bahia: 15% de desconto com cupom",
+     "verificadoHoje": false
+    }
+   ],
+   "ok": true,
+   "em": "2026-06-11T22:59:47.353Z"
+  },
+  {
+   "loja": "Magalu",
+   "slug": "magazine-luiza",
+   "url": "https://www.cuponomia.com.br/desconto/magazine-luiza",
+   "cupons": [
+    {
+     "codigo": "LU300",
+     "descricao": "Aproveite os itens selecionados no link.",
+     "titulo": "Cupom Magalu com R$300 OFF em suas compras",
+     "verificadoHoje": true
+    },
+    {
+     "codigo": "LU120",
+     "descricao": "R$120 OFF para itens selecionados vendidos pelo Magalu.",
+     "titulo": "Magalu garante desconto imperdível de R$120 com cupom",
+     "verificadoHoje": false
+    },
+    {
+     "codigo": "LU200",
+     "descricao": "R$200 OFF para itens selecionados vendidos por Magalu",
+     "titulo": "R$200 OFF em pedidos com cupom Magalu",
+     "verificadoHoje": false
+    },
+    {
+     "codigo": "FRALDA20",
+     "descricao": "20% OFF para itens selecionados vendidos pelo Magalu.",
+     "titulo": "Garanta 20% OFF com cupom Magalu",
+     "verificadoHoje": false
+    },
+    {
+     "codigo": "CASACOM300",
+     "descricao": "R$300 OFF para itens para itens selecionados.",
+     "titulo": "Super promo Magalu: R$300 de economia com cupom",
+     "verificadoHoje": false
+    },
+    {
+     "codigo": "EPOCA10",
+     "descricao": "Válido para itens selecionados no site.",
+     "titulo": "Aplique código promocional Magalu e tenha 10% de desconto",
+     "verificadoHoje": false
+    },
+    {
+     "codigo": "CASACOM200",
+     "descricao": "Aplicável para itens do link.",
+     "titulo": "Produtos selecionados com R$200 de economia utilizando cupom Magalu",
+     "verificadoHoje": false
+    },
+    {
+     "codigo": "CUPOMBIKE30",
+     "descricao": "30% OFF em Bike Aro 29 Shimano.",
+     "titulo": "Bike Aro 29 Shimano com 30% OFF utilizando cupom Magalu",
+     "verificadoHoje": false
+    }
+   ],
+   "ok": true,
+   "em": "2026-06-11T22:59:47.353Z"
+  },
+  {
+   "loja": "KaBuM",
+   "slug": "kabum",
+   "url": "https://www.cuponomia.com.br/desconto/kabum",
+   "cupons": [
+    {
+     "codigo": "JBL25OFF",
+     "descricao": "Clique no link para conferir a lista selecionada.",
+     "titulo": "Obtenha 25% OFF com cupom KaBuM!",
+     "verificadoHoje": true
+    },
+    {
+     "codigo": "CUPOMZASSO",
+     "descricao": "R$300 OFF em consoles selecionados para elevar seu nível de jogo.",
+     "titulo": "Super promo KaBuM!: R$300 de desconto com cupom",
+     "verificadoHoje": true
+    },
+    {
+     "codigo": "PLAY7",
+     "descricao": "Aproveite os produtos do link.",
+     "titulo": "7% de desconto em Console Sony PlayStation 5 com cupom KaBuM!",
+     "verificadoHoje": true
+    },
+    {
+     "codigo": "TVNACOPA",
+     "descricao": "Aproveite a seleção do link.",
+     "titulo": "Torça com tudo: 9% OFF na sua TV nova com cupom KaBuM!",
+     "verificadoHoje": true
+    },
+    {
+     "codigo": "SEVEN",
+     "descricao": "Desconto válido para Monitor Gamer Curvo Agon Quad 32” Aoc Wqhd, 180hz, 0.5ms Com 3.500:1 De Contraste - Cq32g4e/57 - Bivolt.",
+     "titulo": "Garanta 7% OFF em Monitor Gamer com voucher KaBuM!",
+     "verificadoHoje": true
+    },
+    {
+     "codigo": "GOL500",
+     "descricao": "R$500 OFF para compras acima de R$5.000.",
+     "titulo": "A chance de economizar R$500 em compras com cupom KaBuM!",
+     "verificadoHoje": true
+    },
+    {
+     "codigo": "GOL100",
+     "descricao": "Aplique cupom KaBuM! no carrinho e obtenha R$100 OFF em compras acima de R$1.500.",
+     "titulo": "Itens selecionados com R$100 de economia",
+     "verificadoHoje": true
+    },
+    {
+     "codigo": "KABUMGELOU",
+     "descricao": "Aplique cupom KaBuM! no carrinho para garantir economia.",
+     "titulo": "5% OFF em seleção de Cervejeira",
+     "verificadoHoje": true
+    }
+   ],
+   "ok": true,
+   "em": "2026-06-11T22:59:47.353Z"
+  }
+ ]
+}

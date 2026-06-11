@@ -8,6 +8,10 @@ lista de desejos. Roda sozinho e de graça:
 - **Resend** envia email quando um produto fica abaixo do preço-alvo ou atinge um novo
   menor preço histórico.
 
+Também monitora **cupons gerais de loja** (campanhas tipo "MEIOCAMPO" da Amazon) via
+Cuponomia, num painel separado no topo do dashboard. As lojas monitoradas ficam em
+`lojasCupons` no [`products.json`](products.json).
+
 ## Como adicionar/editar produtos
 
 **Pelo dashboard:** botão **➕ Adicionar produto** — preenche nome, preço-alvo, palavras

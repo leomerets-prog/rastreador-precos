@@ -10,5 +10,12 @@
       "precoMax": 2600,
       "amazonUrl": "https://www.amazon.com.br/dp/B0FN4BK3V7"
     }
+  ],
+  "lojasCupons": [
+    { "slug": "mercado-livre", "nome": "Mercado Livre" },
+    { "slug": "amazon", "nome": "Amazon" },
+    { "slug": "casas-bahia", "nome": "Casas Bahia" },
+    { "slug": "magazine-luiza", "nome": "Magalu" },
+    { "slug": "kabum", "nome": "KaBuM" }
   ]
 }

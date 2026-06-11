@@ -11,6 +11,7 @@ import * as pelando from "./sources/pelando.js";
 import * as promobit from "./sources/promobit.js";
 import { precoNaFaixa } from "./lib.js";
 import { processarAlertas } from "./alert.js";
+import { buscarCupons } from "./cupons.js";
 
 const raiz = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const dataDir = path.join(raiz, "docs", "data");
@@ -107,7 +108,7 @@ async function coletarProduto(produto, anterior, agora) {
 
 async function main() {
   const agora = new Date().toISOString();
-  const { products } = JSON.parse(fs.readFileSync(path.join(raiz, "products.json"), "utf8"));
+  const { products, lojasCupons = [] } = JSON.parse(fs.readFileSync(path.join(raiz, "products.json"), "utf8"));
   const latestAnterior = lerJson(path.join(dataDir, "latest.json"), { produtos: {} });
   const history = lerJson(path.join(dataDir, "history.json"), {});
   const state = lerJson(path.join(dataDir, "state.json"), {});
@@ -130,9 +131,24 @@ async function main() {
     }
   }
 
+  // cupons gerais de loja (campanhas tipo "MEIOCAMPO"), independentes de produto
+  let cupons = { geradoEm: agora, lojas: [] };
+  if (lojasCupons.length) {
+    console.log(`Buscando cupons de ${lojasCupons.length} loja(s)...`);
+    const lojas = await buscarCupons(lojasCupons, agora);
+    cupons = { geradoEm: agora, lojas };
+    const total = lojas.reduce((n, l) => n + l.cupons.length, 0);
+    console.log(`  ${total} cupons ativos (${lojas.filter((l) => !l.ok).map((l) => l.loja + " falhou").join(", ") || "todas as lojas ok"})`);
+  }
+
   fs.mkdirSync(dataDir, { recursive: true });
   fs.writeFileSync(path.join(dataDir, "latest.json"), JSON.stringify(latest, null, 1));
   fs.writeFileSync(path.join(dataDir, "history.json"), JSON.stringify(history, null, 1));
+  // preserva cupons da rodada anterior se esta não trouxe nenhum (ex.: site fora do ar)
+  const cuponsAnterior = lerJson(path.join(dataDir, "cupons.json"), null);
+  if (cupons.lojas.some((l) => l.cupons.length) || !cuponsAnterior) {
+    fs.writeFileSync(path.join(dataDir, "cupons.json"), JSON.stringify(cupons, null, 1));
+  }
 
   const novoState = await processarAlertas(products, latest, state);
   fs.writeFileSync(path.join(dataDir, "state.json"), JSON.stringify(novoState, null, 1));

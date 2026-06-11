@@ -137,6 +137,56 @@ async function carregar() {
   }
 }
 
+// --- Painel de cupons ativos de loja (lê data/cupons.json) ---
+function chipCupom(c) {
+  const verif = c.verificadoHoje ? '<span class="cupom-verif" title="Verificado hoje">✓ hoje</span>' : "";
+  return `<li class="cupom-item">
+    <button class="cupom-codigo" data-codigo="${esc(c.codigo)}" title="Copiar código">${esc(c.codigo)} 📋</button>
+    ${verif}
+    <span class="cupom-desc">${esc(c.descricao || "")}</span>
+  </li>`;
+}
+
+function lojaCupons(l) {
+  if (!l.cupons || l.cupons.length === 0) return "";
+  return `<div class="cupom-loja">
+    <h3><a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.loja)}</a> <small>${l.cupons.length}</small></h3>
+    <ul class="cupom-lista">${l.cupons.map(chipCupom).join("")}</ul>
+  </div>`;
+}
+
+async function carregarCupons() {
+  try {
+    const c = await fetch(`data/cupons.json?t=${Date.now()}`).then((r) => r.json());
+    const lojas = (c.lojas || []).filter((l) => l.cupons && l.cupons.length);
+    if (lojas.length === 0) return;
+    const total = lojas.reduce((n, l) => n + l.cupons.length, 0);
+    document.getElementById("cupons-titulo").textContent = `🎟️ Cupons ativos (${total})`;
+    document.getElementById("cupons").innerHTML = lojas.map(lojaCupons).join("");
+    document.getElementById("cupons-secao").hidden = false;
+  } catch {
+    /* sem cupons ainda — mantém oculto */
+  }
+}
+
+// copiar código ao clicar (delegação de evento)
+document.getElementById("cupons").addEventListener("click", async (ev) => {
+  const btn = ev.target.closest(".cupom-codigo");
+  if (!btn) return;
+  try {
+    await navigator.clipboard.writeText(btn.dataset.codigo);
+    const original = btn.textContent;
+    btn.textContent = "copiado! ✓";
+    btn.classList.add("copiado");
+    setTimeout(() => {
+      btn.textContent = original;
+      btn.classList.remove("copiado");
+    }, 1500);
+  } catch {
+    /* clipboard indisponível */
+  }
+});
+
 const links = linksRepo();
 if (links) {
   const le = document.getElementById("link-editar");
@@ -188,4 +238,6 @@ document.getElementById("form-add-form").addEventListener("submit", async (ev) =
 });
 
 carregar();
+carregarCupons();
 setInterval(carregar, 5 * 60 * 1000);
+setInterval(carregarCupons, 5 * 60 * 1000);
