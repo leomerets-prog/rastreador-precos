@@ -74,12 +74,14 @@ async function coletarProduto(produto, anterior, agora) {
   }
 
   // melhor oferta: lojas diretas + promoções do Promobit com preço estruturado,
-  // sempre dentro da faixa de preço plausível e sem dado desatualizado
+  // sempre dentro da faixa de preço plausível; prefere dado fresco, mas cai para o
+  // último conhecido (marcado como desatualizado) se todas as fontes de preço falharem
   const candidatas = [
     ...resultado.ofertas,
     ...resultado.promocoes.filter((p) => p.fonte === "promobit" && p.preco != null),
-  ].filter((o) => !o.desatualizado && precoNaFaixa(o.preco, produto));
-  resultado.melhorOferta = candidatas.sort((a, b) => a.preco - b.preco)[0] ?? null;
+  ].filter((o) => precoNaFaixa(o.preco, produto));
+  const frescas = candidatas.filter((o) => !o.desatualizado);
+  resultado.melhorOferta = (frescas.length ? frescas : candidatas).sort((a, b) => a.preco - b.preco)[0] ?? null;
   return resultado;
 }
 
@@ -97,7 +99,8 @@ async function main() {
     const melhor = latest.produtos[produto.id].melhorOferta;
     console.log(melhor ? `  melhor: R$ ${melhor.preco} (${melhor.fonte})` : "  nenhuma oferta válida nesta rodada");
 
-    if (melhor) {
+    // histórico só recebe preço fresco — dado carregado de rodada antiga repetiria um ponto falso
+    if (melhor && !melhor.desatualizado) {
       history[produto.id] = (history[produto.id] ?? []).concat({ em: agora, preco: melhor.preco, fonte: melhor.fonte });
       if (history[produto.id].length > 2000) history[produto.id] = history[produto.id].slice(-2000);
     }

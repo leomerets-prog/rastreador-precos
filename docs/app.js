@@ -77,7 +77,7 @@ function cardProduto(id, p, historico) {
     blocoMelhor = `
       <div class="melhor">
         <span class="preco ${abaixo ? "abaixo-alvo" : ""}">${fmtBRL(melhor.preco)}</span>
-        <span class="loja">${esc(melhor.loja ?? NOMES_FONTES[melhor.fonte])}${melhor.cupom ? ` · <span class="cupom">cupom: ${esc(melhor.cupom)}</span>` : ""}</span>
+        <span class="loja">${esc(melhor.loja ?? NOMES_FONTES[melhor.fonte])}${melhor.cupom ? ` · <span class="cupom">cupom: ${esc(melhor.cupom)}</span>` : ""}${melhor.desatualizado ? ` <span class="tag-velho">⚠ preço de coleta antiga (${tempoRelativo(melhor.coletadoEm)})</span>` : ""}</span>
         <a class="btn-comprar" href="${esc(melhor.url)}" target="_blank" rel="noopener">Comprar</a>
       </div>
       <p class="alvo">${alvoTxt}<span class="minimo">mínimo registrado: ${fmtBRL(minHist)}</span></p>`;
