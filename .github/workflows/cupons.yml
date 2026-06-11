@@ -1,0 +1,46 @@
+name: Vigia de cupons
+
+on:
+  schedule:
+    - cron: "*/15 * * * *" # a cada ~15 min (o agendador do GitHub pode atrasar alguns min)
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: cupons
+  cancel-in-progress: false
+
+jobs:
+  vigiar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Buscar cupons e alertar novos
+        working-directory: scraper
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          ALERT_EMAIL: ${{ secrets.ALERT_EMAIL }}
+        run: |
+          export DASHBOARD_URL="https://rastreador-precos.vercel.app/"
+          node cupons-run.js
+
+      - name: Commitar cupons atualizados
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/data/cupons.json docs/data/cupons-state.json
+          if git diff --staged --quiet; then
+            echo "Sem mudanças nos cupons."
+          else
+            git commit -m "cupons: atualização automática"
+            git pull --rebase --autostash
+            git push
+          fi

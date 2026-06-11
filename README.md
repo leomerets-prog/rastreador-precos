@@ -10,7 +10,9 @@ lista de desejos. Roda sozinho e de graça:
 
 Também monitora **cupons gerais de loja** (campanhas tipo "MEIOCAMPO" da Amazon) via
 Cuponomia, num painel separado no topo do dashboard. As lojas monitoradas ficam em
-`lojasCupons` no [`products.json`](products.json).
+`lojasCupons` no [`products.json`](products.json). Um **vigia de cupons** roda a cada
+~15 min (workflow `cupons.yml`) e envia email quando surge um cupom novo nas lojas
+marcadas com `"alerta": true` (por padrão Mercado Livre e Amazon, que esgotam rápido).
 
 ## Como adicionar/editar produtos
 

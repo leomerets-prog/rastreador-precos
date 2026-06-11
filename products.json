@@ -12,8 +12,8 @@
     }
   ],
   "lojasCupons": [
-    { "slug": "mercado-livre", "nome": "Mercado Livre" },
-    { "slug": "amazon", "nome": "Amazon" },
+    { "slug": "mercado-livre", "nome": "Mercado Livre", "alerta": true },
+    { "slug": "amazon", "nome": "Amazon", "alerta": true },
     { "slug": "casas-bahia", "nome": "Casas Bahia" },
     { "slug": "magazine-luiza", "nome": "Magalu" },
     { "slug": "kabum", "nome": "KaBuM" }

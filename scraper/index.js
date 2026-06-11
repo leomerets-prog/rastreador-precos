@@ -11,7 +11,7 @@ import * as pelando from "./sources/pelando.js";
 import * as promobit from "./sources/promobit.js";
 import { precoNaFaixa } from "./lib.js";
 import { processarAlertas } from "./alert.js";
-import { buscarCupons } from "./cupons.js";
+import { buscarCupons, alertarCuponsNovos } from "./cupons.js";
 
 const raiz = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const dataDir = path.join(raiz, "docs", "data");
@@ -148,6 +148,13 @@ async function main() {
   const cuponsAnterior = lerJson(path.join(dataDir, "cupons.json"), null);
   if (cupons.lojas.some((l) => l.cupons.length) || !cuponsAnterior) {
     fs.writeFileSync(path.join(dataDir, "cupons.json"), JSON.stringify(cupons, null, 1));
+  }
+  // a coleta completa também alerta cupons novos, compartilhando o estado com o vigia leve
+  if (cupons.lojas.length) {
+    const cuponsState = lerJson(path.join(dataDir, "cupons-state.json"), { codigos: {} });
+    const { novoState: cs, novos } = await alertarCuponsNovos(cupons.lojas, cuponsState, agora);
+    fs.writeFileSync(path.join(dataDir, "cupons-state.json"), JSON.stringify(cs, null, 1));
+    if (novos.length) console.log(`  ${novos.length} cupom(ns) novo(s) alertável(is)`);
   }
 
   const novoState = await processarAlertas(products, latest, state);

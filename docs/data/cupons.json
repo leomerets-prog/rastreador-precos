@@ -1,9 +1,14 @@
 {
+<<<<<<< Updated upstream
  "geradoEm": "2026-06-11T23:05:02.554Z",
+=======
+ "geradoEm": "2026-06-11T23:10:25.042Z",
+>>>>>>> Stashed changes
  "lojas": [
   {
    "loja": "Mercado Livre",
    "slug": "mercado-livre",
+   "alerta": true,
    "url": "https://www.cuponomia.com.br/desconto/mercado-livre",
    "cupons": [
     {
@@ -56,11 +61,16 @@
     }
    ],
    "ok": true,
+<<<<<<< Updated upstream
    "em": "2026-06-11T23:05:02.554Z"
+=======
+   "em": "2026-06-11T23:10:25.042Z"
+>>>>>>> Stashed changes
   },
   {
    "loja": "Amazon",
    "slug": "amazon",
+   "alerta": true,
    "url": "https://www.cuponomia.com.br/desconto/amazon",
    "cupons": [
     {
@@ -113,11 +123,16 @@
     }
    ],
    "ok": true,
+<<<<<<< Updated upstream
    "em": "2026-06-11T23:05:02.554Z"
+=======
+   "em": "2026-06-11T23:10:25.042Z"
+>>>>>>> Stashed changes
   },
   {
    "loja": "Casas Bahia",
    "slug": "casas-bahia",
+   "alerta": false,
    "url": "https://www.cuponomia.com.br/desconto/casas-bahia",
    "cupons": [
     {
@@ -170,11 +185,16 @@
     }
    ],
    "ok": true,
+<<<<<<< Updated upstream
    "em": "2026-06-11T23:05:02.554Z"
+=======
+   "em": "2026-06-11T23:10:25.042Z"
+>>>>>>> Stashed changes
   },
   {
    "loja": "Magalu",
    "slug": "magazine-luiza",
+   "alerta": false,
    "url": "https://www.cuponomia.com.br/desconto/magazine-luiza",
    "cupons": [
     {
@@ -227,11 +247,16 @@
     }
    ],
    "ok": true,
+<<<<<<< Updated upstream
    "em": "2026-06-11T23:05:02.554Z"
+=======
+   "em": "2026-06-11T23:10:25.042Z"
+>>>>>>> Stashed changes
   },
   {
    "loja": "KaBuM",
    "slug": "kabum",
+   "alerta": false,
    "url": "https://www.cuponomia.com.br/desconto/kabum",
    "cupons": [
     {
@@ -284,7 +309,11 @@
     }
    ],
    "ok": true,
+<<<<<<< Updated upstream
    "em": "2026-06-11T23:05:02.554Z"
+=======
+   "em": "2026-06-11T23:10:25.042Z"
+>>>>>>> Stashed changes
   }
  ]
 }
