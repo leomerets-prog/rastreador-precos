@@ -15,6 +15,11 @@ import { processarAlertas } from "./alert.js";
 const raiz = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const dataDir = path.join(raiz, "docs", "data");
 
+// Tolerância antes de uma fonte ser marcada como "dado velho" no dashboard. As coletas
+// (nuvem + PC) rodam a cada 3h e se intercalam, então 6h cobre uma falha pontual sem
+// rebaixar o dado de quem coletou por último.
+const STALE_MS = 6 * 60 * 60 * 1000;
+
 // amazon/ml/zoom/buscape entregam preço de loja (entram na melhor oferta);
 // pelando/promobit entregam promoções/cupons relacionados.
 const FONTES = { amazon, mercadolivre, zoom, buscape, pelando, promobit };
@@ -62,18 +67,18 @@ async function coletarProduto(produto, anterior, agora) {
       resultado.fontes[nome] = { ok: true, em: agora, ultimoOkEm: agora };
     } else {
       const erro = exec.reason?.message ?? String(exec.reason);
-      // mantém os últimos dados conhecidos da fonte, marcados como desatualizados
+      // Merge por fonte: uma falha NÃO rebaixa um dado recente coletado por outra
+      // rodada (ex.: nuvem falha ML/Zoom, mas o PC os pegou há pouco). Mantém o
+      // último sucesso, preservando seu horário, e só marca "velho" após STALE_MS.
+      const ultimoOkEm = anterior?.fontes?.[nome]?.ultimoOkEm ?? null;
+      const idadeMs = ultimoOkEm ? Date.parse(agora) - Date.parse(ultimoOkEm) : Infinity;
+      const fresco = idadeMs < STALE_MS;
       const antigasOfertas = (anterior?.ofertas ?? []).filter((o) => o.fonte === nome);
       const antigasPromos = (anterior?.promocoes ?? []).filter((o) => o.fonte === nome);
-      resultado.ofertas.push(...antigasOfertas.map((o) => ({ ...o, desatualizado: true })));
-      resultado.promocoes.push(...antigasPromos.map((o) => ({ ...o, desatualizado: true })));
-      resultado.fontes[nome] = {
-        ok: false,
-        erro,
-        em: agora,
-        ultimoOkEm: anterior?.fontes?.[nome]?.ultimoOkEm ?? null,
-      };
-      console.error(`  [${produto.id}] fonte ${nome} falhou: ${erro}`);
+      resultado.ofertas.push(...antigasOfertas.map((o) => ({ ...o, desatualizado: !fresco })));
+      resultado.promocoes.push(...antigasPromos.map((o) => ({ ...o, desatualizado: !fresco })));
+      resultado.fontes[nome] = { ok: fresco, erro, em: agora, ultimoOkEm };
+      console.error(`  [${produto.id}] fonte ${nome} falhou: ${erro}${fresco ? " (usando dado recente de outra coleta)" : ""}`);
     }
   }
 
@@ -114,10 +119,14 @@ async function main() {
     const melhor = latest.produtos[produto.id].melhorOferta;
     console.log(melhor ? `  melhor: R$ ${melhor.preco} (${melhor.fonte})` : "  nenhuma oferta válida nesta rodada");
 
-    // histórico só recebe preço fresco — dado carregado de rodada antiga repetiria um ponto falso
+    // histórico só recebe preço fresco — e só quando muda, para não inflar com pontos
+    // repetidos a cada rodada (várias coletas/dia republicam o mesmo melhor preço)
     if (melhor && !melhor.desatualizado) {
-      history[produto.id] = (history[produto.id] ?? []).concat({ em: agora, preco: melhor.preco, fonte: melhor.fonte });
-      if (history[produto.id].length > 2000) history[produto.id] = history[produto.id].slice(-2000);
+      const serie = (history[produto.id] ??= []);
+      if (serie.length === 0 || serie[serie.length - 1].preco !== melhor.preco) {
+        serie.push({ em: agora, preco: melhor.preco, fonte: melhor.fonte });
+        if (serie.length > 2000) history[produto.id] = serie.slice(-2000);
+      }
     }
   }
 
