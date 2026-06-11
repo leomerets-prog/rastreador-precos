@@ -1,10 +1,12 @@
-// Orquestrador: roda as 4 fontes para cada produto, grava os JSONs do
+// Orquestrador: roda as fontes para cada produto, grava os JSONs do
 // dashboard e dispara os alertas. Falha de uma fonte não derruba a rodada.
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import * as amazon from "./sources/amazon.js";
 import * as mercadolivre from "./sources/mercadolivre.js";
+import * as zoom from "./sources/zoom.js";
+import * as buscape from "./sources/buscape.js";
 import * as pelando from "./sources/pelando.js";
 import * as promobit from "./sources/promobit.js";
 import { precoNaFaixa } from "./lib.js";
@@ -13,7 +15,9 @@ import { processarAlertas } from "./alert.js";
 const raiz = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const dataDir = path.join(raiz, "docs", "data");
 
-const FONTES = { amazon, mercadolivre, pelando, promobit };
+// amazon/ml/zoom/buscape entregam preço de loja (entram na melhor oferta);
+// pelando/promobit entregam promoções/cupons relacionados.
+const FONTES = { amazon, mercadolivre, zoom, buscape, pelando, promobit };
 
 function lerJson(arquivo, padrao) {
   try {
@@ -72,6 +76,17 @@ async function coletarProduto(produto, anterior, agora) {
       console.error(`  [${produto.id}] fonte ${nome} falhou: ${erro}`);
     }
   }
+
+  // Zoom e Buscapé (mesmo grupo) frequentemente repetem a mesma oferta loja+preço;
+  // remove duplicatas mantendo a primeira, para a listagem não ficar redundante
+  const chaveOferta = (o) => `${(o.loja ?? o.fonte).toLowerCase()}|${o.preco}|${o.titulo}`;
+  const vistasOfertas = new Set();
+  resultado.ofertas = resultado.ofertas.filter((o) => {
+    const k = chaveOferta(o);
+    if (vistasOfertas.has(k)) return false;
+    vistasOfertas.add(k);
+    return true;
+  });
 
   // melhor oferta: lojas diretas + promoções do Promobit com preço estruturado,
   // sempre dentro da faixa de preço plausível; prefere dado fresco, mas cai para o

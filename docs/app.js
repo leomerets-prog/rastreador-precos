@@ -2,7 +2,14 @@
 const fmtBRL = (n) =>
   n == null ? "—" : n.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
 
-const NOMES_FONTES = { amazon: "Amazon", mercadolivre: "Mercado Livre", pelando: "Pelando", promobit: "Promobit" };
+const NOMES_FONTES = {
+  amazon: "Amazon",
+  mercadolivre: "Mercado Livre",
+  zoom: "Zoom",
+  buscape: "Buscapé",
+  pelando: "Pelando",
+  promobit: "Promobit",
+};
 
 function tempoRelativo(iso) {
   if (!iso) return "nunca";

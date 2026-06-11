@@ -7,6 +7,7 @@ import { parseAmazon } from "../sources/amazon.js";
 import { parseMercadoLivre } from "../sources/mercadolivre.js";
 import { parsePelando } from "../sources/pelando.js";
 import { parsePromobit } from "../sources/promobit.js";
+import { parseComparador } from "../sources/comparador.js";
 import { parsePrecoBR, normalizar, tituloRelevante } from "../lib.js";
 
 const aqui = path.dirname(fileURLToPath(import.meta.url));
@@ -68,6 +69,28 @@ test("promobit: extrai ofertas com preço e cupom do __NEXT_DATA__", () => {
     assert.ok(o.titulo);
     if (o.url) assert.match(o.url, /^https:\/\//);
   }
+});
+
+for (const [nome, base] of [
+  ["zoom", "https://www.zoom.com.br"],
+  ["buscape", "https://www.buscape.com.br"],
+]) {
+  test(`${nome}: extrai ofertas com loja, preço e link do __NEXT_DATA__`, () => {
+    const r = parseComparador(fixture(`${nome}.html`), base);
+    assert.equal(r.erro, undefined);
+    assert.ok(r.ofertas.length >= 10, `esperava >=10 ofertas, veio ${r.ofertas.length}`);
+    // o comparador agrega várias lojas (Casas Bahia, Ponto, Magalu, Amazon...)
+    const lojas = new Set(r.ofertas.map((o) => o.loja));
+    assert.ok(lojas.size >= 3, `esperava >=3 lojas distintas, veio ${[...lojas].join(",")}`);
+    for (const o of r.ofertas) {
+      assert.ok(o.titulo && o.preco > 0);
+      assert.match(o.url, new RegExp(`^${base.replace(/\./g, "\\.")}/`));
+    }
+  });
+}
+
+test("comparador: __NEXT_DATA__ ausente vira erro, não dados", () => {
+  assert.ok(parseComparador("<html><body>bloqueado</body></html>", "https://x").erro);
 });
 
 test("detecção de bloqueio: páginas de verificação não viram dados", () => {
