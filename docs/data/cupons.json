@@ -1,5 +1,5 @@
 {
- "geradoEm": "2026-06-12T12:41:27.637Z",
+ "geradoEm": "2026-06-12T19:33:12.509Z",
  "lojas": [
   {
    "loja": "Mercado Livre",
@@ -57,7 +57,7 @@
     }
    ],
    "ok": true,
-   "em": "2026-06-12T12:41:27.637Z"
+   "em": "2026-06-12T19:33:12.509Z"
   },
   {
    "loja": "Amazon",
@@ -115,7 +115,7 @@
     }
    ],
    "ok": true,
-   "em": "2026-06-12T12:41:27.637Z"
+   "em": "2026-06-12T19:33:12.509Z"
   },
   {
    "loja": "Casas Bahia",
@@ -173,7 +173,7 @@
     }
    ],
    "ok": true,
-   "em": "2026-06-12T12:41:27.637Z"
+   "em": "2026-06-12T19:33:12.509Z"
   },
   {
    "loja": "Magalu",
@@ -231,7 +231,7 @@
     }
    ],
    "ok": true,
-   "em": "2026-06-12T12:41:27.637Z"
+   "em": "2026-06-12T19:33:12.509Z"
   },
   {
    "loja": "KaBuM",
@@ -252,6 +252,12 @@
      "verificadoHoje": true
     },
     {
+     "codigo": "MAGALU3000",
+     "descricao": "Aproveite economia em item selecionado.",
+     "titulo": "Descontão de R$3.000 utilizando código KaBuM!",
+     "verificadoHoje": true
+    },
+    {
      "codigo": "PLAY7",
      "descricao": "Aproveite os produtos do link.",
      "titulo": "7% de desconto em Console Sony PlayStation 5 com cupom KaBuM!",
@@ -264,32 +270,26 @@
      "verificadoHoje": true
     },
     {
+     "codigo": "MAGALU400",
+     "descricao": "Clique no link e confira as ofertas.",
+     "titulo": "Aproveite itens com R$400 OFF aplicando cupom KaBuM!",
+     "verificadoHoje": true
+    },
+    {
+     "codigo": "MAGALU100",
+     "descricao": "Use cupom KaBuM! no carrinho para garantir economia.",
+     "titulo": "Smartphone Motorola Moto G56 com R$100 de desconto",
+     "verificadoHoje": true
+    },
+    {
      "codigo": "GOL100",
      "descricao": "Aplique cupom KaBuM! no carrinho e obtenha R$100 OFF em compras acima de R$1.500.",
      "titulo": "Itens selecionados com R$100 de economia",
      "verificadoHoje": true
-    },
-    {
-     "codigo": "KABUMGELOU",
-     "descricao": "Aplique cupom KaBuM! no carrinho para garantir economia.",
-     "titulo": "5% OFF em seleção de Cervejeira",
-     "verificadoHoje": true
-    },
-    {
-     "codigo": "SEVEN",
-     "descricao": "Desconto válido para Monitor Gamer Curvo Agon Quad 32” Aoc Wqhd, 180hz, 0.5ms Com 3.500:1 De Contraste - Cq32g4e/57 - Bivolt.",
-     "titulo": "Garanta 7% OFF em Monitor Gamer com voucher KaBuM!",
-     "verificadoHoje": false
-    },
-    {
-     "codigo": "150NOROBO",
-     "descricao": "Válido para os produtos do link. Aplique o cupom no carrinho de compras.",
-     "titulo": "R$150 OFF em Robôs KaBuM!",
-     "verificadoHoje": false
     }
    ],
    "ok": true,
-   "em": "2026-06-12T12:41:27.637Z"
+   "em": "2026-06-12T19:33:12.509Z"
   }
  ]
 }
